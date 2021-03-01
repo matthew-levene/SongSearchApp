@@ -8,11 +8,22 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.ml.songsearchapp.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/toDetailsFragment"
+            app:destination="@id/detailsFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.ml.songsearchapp.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_details"/>
+        android:name="com.ml.songsearchapp.ui.details.DetailsFragment"
+        tools:layout="@layout/fragment_details">
+
+        <argument
+            android:name="songArgs"
+            app:argType="com.ml.songsearchapp.db.entities.Song" />
+    </fragment>
 
 </navigation>
