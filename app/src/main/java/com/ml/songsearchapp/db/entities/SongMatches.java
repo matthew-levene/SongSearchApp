@@ -12,18 +12,18 @@ import java.util.List;
 public class SongMatches {
 
     @PrimaryKey
-    public Integer songMatchesId = 1;
+    public int songMatchesId = 1;
 
     @SerializedName("track")
     @Expose
-    private List<Song> songList;
+    public List<Song> songList;
 
     public SongMatches(List<Song> songList) {
         this.songList = songList;
     }
 
-    public Integer getSongMatchesId() {
-        return songMatchesId;
+    public int getSongMatchesId() {
+        return this.songMatchesId;
     }
 
     public List<Song> getSongList() {

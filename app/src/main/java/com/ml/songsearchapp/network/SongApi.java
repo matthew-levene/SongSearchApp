@@ -1,9 +1,8 @@
 package com.ml.songsearchapp.network;
 
-import androidx.lifecycle.LiveData;
-
 import com.ml.songsearchapp.BuildConfig;
 
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -15,7 +14,7 @@ public interface SongApi {
     String method = "track.search";
 
     @GET(search)
-    LiveData<ResponseResult> searchSongName(
+    Call<ResultsResponse> searchSongName(
             @Query("method") String method,
             @Query("track") String track,
             @Query("api_key") String apiKey,
