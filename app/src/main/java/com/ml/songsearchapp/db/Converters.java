@@ -3,6 +3,7 @@ package com.ml.songsearchapp.db;
 import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ml.songsearchapp.db.entities.Song;
 
 import java.util.List;
@@ -15,6 +16,6 @@ public class Converters {
 
     @TypeConverter
     public List<Song> songListFromJson(String value) {
-        return new Gson().fromJson(value, List.class);
+        return new Gson().fromJson(value, new TypeToken<List<Song>>(){}.getType());
     }
 }
