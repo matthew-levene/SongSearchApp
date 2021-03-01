@@ -32,7 +32,9 @@ public class DatabaseModule {
                 appContext,
                 SongDatabase.class,
                 DatabaseConstants.DATABASE_NAME
-        ).build();
+        )
+                .allowMainThreadQueries()
+                .build();
     }
 
 }
