@@ -15,7 +15,7 @@ public interface SongDao {
     void storeSongList(SongMatches songMatches);
 
     @Query("SELECT * FROM SongMatches")
-    LiveData<SongMatches> getAllSongs();
+    SongMatches getAllSongs();
 
     @Query("DELETE FROM SongMatches")
     void deleteAllSongs();
