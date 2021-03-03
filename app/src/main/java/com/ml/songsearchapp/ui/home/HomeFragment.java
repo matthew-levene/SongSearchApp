@@ -84,6 +84,6 @@ public class HomeFragment extends Fragment implements SearchAdapterDelegate {
     @Override
     public void songClick(Song song) {
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
-        navController.navigate(HomeFragmentDirections.toDetailsFragment(song));
+        navController.navigate(HomeFragmentDirections.toDetailsFragment(song, null));
     }
 }
