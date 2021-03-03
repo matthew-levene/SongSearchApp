@@ -7,4 +7,5 @@
     <string name="please_enter_song_title_text">Please enter a song title</string>
     <string name="x_listeners_text">%s Listeners</string>
     <string name="open_stream_text">Open Stream</string>
+    <string name="x_times_played_text">%d Times Played</string>
 </resources>

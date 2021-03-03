@@ -23,7 +23,13 @@
 
         <argument
             android:name="songArgs"
-            app:argType="com.ml.songsearchapp.db.entities.Song" />
+            app:argType="com.ml.songsearchapp.db.entities.Song"
+            app:nullable="true"/>
+
+        <argument
+            android:name="similarSongArgs"
+            app:argType="com.ml.songsearchapp.db.entities.similar.SimilarSong"
+            app:nullable="true"/>
     </fragment>
 
 </navigation>
