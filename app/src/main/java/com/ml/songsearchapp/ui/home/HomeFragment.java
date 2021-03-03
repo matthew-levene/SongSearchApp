@@ -4,29 +4,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
-import androidx.navigation.NavGraph;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.ml.songsearchapp.R;
 import com.ml.songsearchapp.databinding.FragmentHomeBinding;
-import com.ml.songsearchapp.db.entities.Song;
-import com.ml.songsearchapp.db.entities.SongMatches;
+import com.ml.songsearchapp.domain.Song;
+import com.ml.songsearchapp.domain.SongMatches;
 import com.ml.songsearchapp.ui.home.adapter.SearchAdapter;
 import com.ml.songsearchapp.ui.home.viewmodel.SearchSongViewModel;
 
-import javax.inject.Inject;
-
 import dagger.hilt.android.AndroidEntryPoint;
-import timber.log.Timber;
 
 import static com.ml.songsearchapp.ui.home.adapter.SearchAdapter.*;
 

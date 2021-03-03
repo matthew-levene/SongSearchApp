@@ -1,8 +1,8 @@
-package com.ml.songsearchapp.network.similar;
+package com.ml.songsearchapp.domain;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.ml.songsearchapp.db.entities.similar.SimilarSong;
+import com.ml.songsearchapp.domain.SimilarSong;
 
 import java.util.List;
 

@@ -1,18 +1,14 @@
 package com.ml.songsearchapp.ui.home.viewmodel;
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.ml.songsearchapp.db.entities.SongMatches;
+import com.ml.songsearchapp.domain.SongMatches;
 import com.ml.songsearchapp.repository.SongRepository;
 
 import javax.inject.Inject;
 
 import dagger.hilt.android.lifecycle.HiltViewModel;
-import timber.log.Timber;
 
 @HiltViewModel
 public class SearchSongViewModel extends ViewModel {

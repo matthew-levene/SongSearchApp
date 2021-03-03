@@ -1,12 +1,9 @@
 package com.ml.songsearchapp.ui.details.viewmodel;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.ml.songsearchapp.db.entities.SongMatches;
-import com.ml.songsearchapp.db.entities.similar.SimilarSong;
-import com.ml.songsearchapp.network.similar.SimilarSongMatches;
+import com.ml.songsearchapp.domain.SimilarSongMatches;
 import com.ml.songsearchapp.repository.SongRepository;
 
 import javax.inject.Inject;

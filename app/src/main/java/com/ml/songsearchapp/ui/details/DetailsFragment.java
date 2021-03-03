@@ -11,15 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.ml.songsearchapp.R;
 import com.ml.songsearchapp.databinding.FragmentDetailsBinding;
-import com.ml.songsearchapp.db.entities.Song;
-import com.ml.songsearchapp.db.entities.similar.SimilarSong;
+import com.ml.songsearchapp.domain.Song;
+import com.ml.songsearchapp.domain.SimilarSong;
 import com.ml.songsearchapp.ui.details.adapter.SimilarSearchAdapter;
 import com.ml.songsearchapp.ui.details.viewmodel.SimilarSongsViewModel;
 

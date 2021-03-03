@@ -4,7 +4,7 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.ml.songsearchapp.db.entities.SongMatches;
+import com.ml.songsearchapp.domain.SongMatches;
 
 import static com.ml.songsearchapp.db.DatabaseConstants.DATABASE_VERSION;
 

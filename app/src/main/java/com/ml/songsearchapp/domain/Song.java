@@ -1,7 +1,8 @@
-package com.ml.songsearchapp.db.entities;
+package com.ml.songsearchapp.domain;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.ml.songsearchapp.domain.Image;
 
 import java.io.Serializable;
 import java.util.List;

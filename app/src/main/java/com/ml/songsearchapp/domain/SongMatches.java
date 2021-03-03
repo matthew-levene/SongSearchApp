@@ -1,10 +1,11 @@
-package com.ml.songsearchapp.db.entities;
+package com.ml.songsearchapp.domain;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.ml.songsearchapp.domain.Song;
 
 import java.util.List;
 

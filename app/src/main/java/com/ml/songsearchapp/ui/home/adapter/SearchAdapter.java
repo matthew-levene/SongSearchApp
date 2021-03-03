@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.ml.songsearchapp.R;
 import com.ml.songsearchapp.databinding.ItemListSongBinding;
-import com.ml.songsearchapp.db.entities.Song;
+import com.ml.songsearchapp.domain.Song;
 
 
 public class SearchAdapter extends ListAdapter<Song, SearchAdapter.SongViewHolder> {

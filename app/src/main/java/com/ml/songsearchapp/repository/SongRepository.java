@@ -4,12 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.ml.songsearchapp.db.SongDao;
-import com.ml.songsearchapp.db.entities.Song;
 import com.ml.songsearchapp.network.ResultsResponse;
-import com.ml.songsearchapp.db.entities.SongMatches;
+import com.ml.songsearchapp.domain.SongMatches;
 import com.ml.songsearchapp.network.SongApi;
 import com.ml.songsearchapp.network.similar.SimilarResultsResponse;
-import com.ml.songsearchapp.network.similar.SimilarSongMatches;
+import com.ml.songsearchapp.domain.SimilarSongMatches;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

@@ -4,7 +4,7 @@ import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ml.songsearchapp.db.entities.Song;
+import com.ml.songsearchapp.domain.Song;
 
 import java.util.List;
 

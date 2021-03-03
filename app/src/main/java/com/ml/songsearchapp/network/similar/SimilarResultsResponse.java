@@ -2,6 +2,7 @@ package com.ml.songsearchapp.network.similar;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.ml.songsearchapp.domain.SimilarSongMatches;
 
 public class SimilarResultsResponse  {
 

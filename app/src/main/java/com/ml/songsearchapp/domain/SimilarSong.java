@@ -1,10 +1,10 @@
-package com.ml.songsearchapp.db.entities.similar;
+package com.ml.songsearchapp.domain;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.ml.songsearchapp.domain.Artist;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class SimilarSong implements Serializable {
 
