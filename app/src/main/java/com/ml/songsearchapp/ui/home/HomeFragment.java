@@ -18,7 +18,7 @@ import com.ml.songsearchapp.databinding.FragmentHomeBinding;
 import com.ml.songsearchapp.domain.Song;
 import com.ml.songsearchapp.domain.SongMatches;
 import com.ml.songsearchapp.ui.home.adapter.SearchAdapter;
-import com.ml.songsearchapp.ui.home.viewmodel.SearchSongViewModel;
+import com.ml.songsearchapp.viewmodel.SearchSongViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
 

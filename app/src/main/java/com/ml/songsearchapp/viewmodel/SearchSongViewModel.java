@@ -1,4 +1,4 @@
-package com.ml.songsearchapp.ui.home.viewmodel;
+package com.ml.songsearchapp.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;

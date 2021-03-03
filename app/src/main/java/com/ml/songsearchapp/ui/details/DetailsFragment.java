@@ -18,7 +18,7 @@ import com.ml.songsearchapp.databinding.FragmentDetailsBinding;
 import com.ml.songsearchapp.domain.Song;
 import com.ml.songsearchapp.domain.SimilarSong;
 import com.ml.songsearchapp.ui.details.adapter.SimilarSearchAdapter;
-import com.ml.songsearchapp.ui.details.viewmodel.SimilarSongsViewModel;
+import com.ml.songsearchapp.viewmodel.SimilarSongsViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
