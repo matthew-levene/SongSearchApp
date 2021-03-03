@@ -18,29 +18,15 @@ import timber.log.Timber;
 public class SearchSongViewModel extends ViewModel {
 
     private final SongRepository songRepository;
-    private final MutableLiveData<SongMatches> _songMatchesMutableLiveData = new MutableLiveData<>();
-    public LiveData<SongMatches> songMatchesLiveData = _songMatchesMutableLiveData;
-
-    private SongMatches songMatches;
+    public LiveData<SongMatches> songMatchesLiveData;
 
     @Inject
     public SearchSongViewModel(SongRepository songRepository) {
         this.songRepository = songRepository;
+        songMatchesLiveData = songRepository.songMatchesLiveData;
     }
 
     public void retrieveSongs(String songTitle) {
-        setSongMatches(
-                songRepository.retrieveSongs(songTitle)
-        );
-
-        _songMatchesMutableLiveData.setValue(getSongMatches());
-    }
-
-    private void setSongMatches(SongMatches songMatches) {
-        this.songMatches = songMatches;
-    }
-
-    private SongMatches getSongMatches() {
-        return this.songMatches;
+        songRepository.retrieveSongs(songTitle);
     }
 }
