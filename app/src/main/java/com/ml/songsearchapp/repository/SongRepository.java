@@ -1,9 +1,15 @@
 package com.ml.songsearchapp.repository;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.ml.songsearchapp.db.SongDao;
+import com.ml.songsearchapp.db.entities.Song;
 import com.ml.songsearchapp.network.ResultsResponse;
 import com.ml.songsearchapp.db.entities.SongMatches;
 import com.ml.songsearchapp.network.SongApi;
+import com.ml.songsearchapp.network.similar.SimilarResultsResponse;
+import com.ml.songsearchapp.network.similar.SimilarSongMatches;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -24,35 +30,71 @@ public class SongRepository {
         this.songApi = songApi;
     }
 
-    public SongMatches retrieveSongs(String songTitle) {
+    private final MutableLiveData<SongMatches> _songMatchesMutableLiveData = new MutableLiveData<>();
+    public LiveData<SongMatches> songMatchesLiveData = _songMatchesMutableLiveData;
 
-        Call<ResultsResponse> call = songApi.searchSongName(
-                songApi.method,
-                songTitle,
-                songApi.apiKey,
-                songApi.responseFormat
-        );
+    private final MutableLiveData<SimilarSongMatches> _similarMatchesMutableLiveData = new MutableLiveData<>();
+    public LiveData<SimilarSongMatches> similarMatchesLiveData = _similarMatchesMutableLiveData;
 
-        call.enqueue(new Callback<ResultsResponse>() {
-                         @Override
-                         public void onResponse(Call<ResultsResponse> call, Response<ResultsResponse> response) {
-                             if (response.body() != null && response.isSuccessful()) {
-                                 songDao.deleteAllSongs();
-                                 songDao.storeSongList(
-                                         response.body()
-                                                 .getResults()
-                                                 .getSongmatches()
-                                 );
+    public void retrieveSongs(String songTitle) {
+        new Thread(() -> {
+            Call<ResultsResponse> call = songApi.searchSongName(
+                    songApi.search,
+                    songTitle,
+                    songApi.apiKey,
+                    songApi.responseFormat
+            );
+
+            call.enqueue(new Callback<ResultsResponse>() {
+                             @Override
+                             public void onResponse(Call<ResultsResponse> call, Response<ResultsResponse> response) {
+                                 if (response.body() != null && response.isSuccessful()) {
+                                     _songMatchesMutableLiveData.setValue(response.body().getResults().getSongmatches());
+                                     songDao.deleteAllSongs();
+                                     songDao.storeSongList(
+                                             response.body()
+                                                     .getResults()
+                                                     .getSongmatches()
+                                     );
+                                 }
+                             }
+
+                             @Override
+                             public void onFailure(Call<ResultsResponse> call, Throwable t) {
+                                 Timber.d("Network Request for Songs failed: %s", t.getLocalizedMessage());
                              }
                          }
-
-                         @Override
-                         public void onFailure(Call<ResultsResponse> call, Throwable t) {
-                             Timber.d("Network Request for Songs failed: %s", t.getLocalizedMessage());
-                         }
-                     }
-        );
-
-        return songDao.getAllSongs();
+            );
+        }).start();
     }
+
+    public void retrieveSimilarSongs(String songTitle, String artistName) {
+        new Thread(() -> {
+            Call<SimilarResultsResponse> call = songApi.searchSimilarSongs(
+                    songApi.searchSimilar,
+                    songTitle,
+                    artistName,
+                    songApi.apiKey,
+                    songApi.responseFormat
+            );
+
+            call.enqueue(new Callback<SimilarResultsResponse>() {
+                             @Override
+                             public void onResponse(Call<SimilarResultsResponse> call, Response<SimilarResultsResponse> response) {
+                                 if (response.body() != null && response.isSuccessful()) {
+                                     _similarMatchesMutableLiveData.setValue(response.body().getSimilartracks());
+                                 }
+                             }
+
+                             @Override
+                             public void onFailure(Call<SimilarResultsResponse> call, Throwable t) {
+                                 Timber.d("Network Request for Songs failed: %s", t.getLocalizedMessage());
+                             }
+                         }
+            );
+        }).start();
+
+    }
+
+
 }
