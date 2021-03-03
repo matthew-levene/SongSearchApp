@@ -1,4 +1,4 @@
-package com.ml.songsearchapp.network.similar;
+package com.ml.songsearchapp.network;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

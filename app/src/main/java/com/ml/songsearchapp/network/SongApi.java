@@ -1,7 +1,6 @@
 package com.ml.songsearchapp.network;
 
 import com.ml.songsearchapp.BuildConfig;
-import com.ml.songsearchapp.network.similar.SimilarResultsResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
