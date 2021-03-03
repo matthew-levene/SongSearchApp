@@ -33,7 +33,6 @@ public class DatabaseModule {
                 SongDatabase.class,
                 DatabaseConstants.DATABASE_NAME
         )
-                .allowMainThreadQueries()
                 .build();
     }
 
