@@ -96,5 +96,9 @@ public class SongRepository {
 
     }
 
+     public void retrieveStoredSongs() {
+        new Thread(() -> _songMatchesMutableLiveData.postValue(songDao.getAllSongs())).start();
+    }
+
 
 }

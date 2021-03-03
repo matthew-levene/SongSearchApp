@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment implements SearchAdapterDelegate {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(this).get(SearchSongViewModel.class);
+        viewModel.retrieveStoredSongs();
         setupRecyclerView();
         setupObserver();
         setupListeners();

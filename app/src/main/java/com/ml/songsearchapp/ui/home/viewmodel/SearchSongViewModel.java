@@ -29,4 +29,6 @@ public class SearchSongViewModel extends ViewModel {
     public void retrieveSongs(String songTitle) {
         songRepository.retrieveSongs(songTitle);
     }
+
+    public void retrieveStoredSongs() { songRepository.retrieveStoredSongs(); }
 }
